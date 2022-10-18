@@ -1,65 +1,43 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
 import "../../scss/header.scss";
+import HeaderLinks from "../HeaderLinks";
 
 export default function Header() {
+  const [mobileMenuState, setMobileMenuState] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuState(!mobileMenuState);
+  };
+
   return (
-    <header className="header">
-      <h1 className="site-title">Recipe Collection</h1>
-      <ul className="header-links-list">
-        <li className="header-link">
-          <NavLink className="header-link-anchor" to="/">
-            <span className="header-link-text">Home Page</span>
-            <img
-              className="header-link-dropdown-icon"
-              src="/images/dropdown-icon.svg"
-              alt="Dropdown icon"
-            />
-          </NavLink>
-        </li>
-        <li className="header-link">
-          <NavLink className="header-link-anchor" to="/">
-            <span className="header-link-text">Recipes Page</span>
-            <img
-              className="header-link-dropdown-icon"
-              src="/images/dropdown-icon.svg"
-              alt="Dropdown icon"
-            />
-          </NavLink>
-        </li>
-        <li className="header-link">
-          <NavLink className="header-link-anchor" to="/">
-            <span className="header-link-text">Pages</span>
-            <img
-              className="header-link-dropdown-icon"
-              src="/images/dropdown-icon.svg"
-              alt="Dropdown icon"
-            />
-          </NavLink>
-        </li>
-        <li className="header-link">
-          <NavLink className="header-link-anchor" to="/">
-            <span className="header-link-text">Test Link</span>
-          </NavLink>
-        </li>
-        <li className="header-link">
-          <NavLink className="header-link-anchor" to="/">
-            <span className="header-link-text">Test Link</span>
-          </NavLink>
-        </li>
-      </ul>
-      <div className="header-profile-recipe-search-container">
-        <img
-          src="/images/search-icon.svg"
-          className="header-search-icon"
-          alt="Search Icon"
-        />
-        <img
-          src="/images/test-user.jpg"
-          className="header-profile-image"
-          alt="User Profile"
-        />
-      </div>
-    </header>
+    <>
+      <header className="header">
+        <h1 className="site-title">Recipe Collection</h1>
+        <HeaderLinks listClassName={"header-links-list"} />
+        <div className="header-profile-recipe-search-container">
+          <img
+            src="/images/search-icon.svg"
+            className="header-search-icon"
+            alt="Search Icon"
+          />
+          <img
+            src="/images/test-user.jpg"
+            className="header-profile-image"
+            alt="User Profile"
+          />
+          <img
+            onClick={toggleMobileMenu}
+            src="/images/hamburger-icon.svg"
+            className="hamburger-icon"
+            alt="Menu Icon"
+          />
+        </div>
+      </header>
+      {mobileMenuState && (
+        <div className="mobile-menu">
+          <HeaderLinks listClassName={"header-links-list-mobile"} />
+        </div>
+      )}
+    </>
   );
 }
