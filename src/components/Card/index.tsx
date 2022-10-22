@@ -1,7 +1,12 @@
-import React from "react";
+import * as React from "react";
 import "../../scss/card.scss";
 
-export default function Card({ imagePath, title }) {
+interface Props {
+  imagePath: string,
+  title: string
+}
+
+export default function Card({ imagePath, title } : Props) {
   return (
     <div className="recipe-card">
       <img className="recipe-card-image" src={imagePath} alt="Shot of recipe" />

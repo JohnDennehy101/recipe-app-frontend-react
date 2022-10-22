@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import * as React from "react";
 import "../../scss/header.scss";
 import HeaderLinks from "../HeaderLinks";
 
 export default function Header() {
-  const [mobileMenuState, setMobileMenuState] = useState(false);
+  const [mobileMenuState, setMobileMenuState] = React.useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuState(!mobileMenuState);

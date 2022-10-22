@@ -1,7 +1,11 @@
-import React from "react";
+import * as React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function HeaderLinks({ listClassName }) {
+interface Props {
+  listClassName: string
+}
+
+export default function HeaderLinks({ listClassName } : Props) {
   return (
     <ul className={listClassName}>
       <li className="header-link">
