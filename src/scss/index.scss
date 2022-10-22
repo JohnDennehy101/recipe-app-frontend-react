@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 * {
     margin: 0;
     padding: 0;
@@ -5,4 +7,17 @@
     box-sizing: border-box;
     font-family: "Playfair Display",
         serif;
+}
+
+#root {
+    width: 80%;
+    margin: 0 auto;
+
+    @include for-tablet-only {
+        width: 90%;
+    }
+
+    @include for-phone-only {
+        width: 94%;
+    }
 }

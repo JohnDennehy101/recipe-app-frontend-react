@@ -1,0 +1,23 @@
+@use "variables" as *;
+
+.recipe-card {
+    border: 1px solid #EEEEEE;
+    margin-bottom: 1.5rem;
+
+    @include for-phone-only {
+        margin: 1rem auto;
+        width: 100%;
+    }
+}
+
+.recipe-card-image {
+    width: 100%;
+    height: 16rem;
+}
+
+.recipe-card-title {
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    margin: 1rem;
+    font-weight: bold;
+}
