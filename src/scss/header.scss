@@ -94,6 +94,10 @@
     position: absolute;
     width: 94%;
 
+    @include for-phone-only {
+        margin: 0;
+    }
+
     @include for-tablet-only {
         width: 90%;
         margin: 0;

@@ -10,14 +10,17 @@ export default function HomePage() {
         <Card
           imagePath={"/images/recipe_placeholder.jpg"}
           title={"Placeholder Recipe Title"}
+          recipeId={1}
         />
         <Card
           imagePath={"/images/recipe_placeholder.jpg"}
           title={"Placeholder Recipe Title"}
+          recipeId={2}
         />
         <Card
           imagePath={"/images/recipe_placeholder.jpg"}
           title={"Placeholder Recipe Title"}
+          recipeId={3}
         />
       </div>
     </>
